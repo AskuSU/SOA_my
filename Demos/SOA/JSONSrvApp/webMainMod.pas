@@ -81,7 +81,6 @@ begin
   Handled:=True;
   GetDir(0,RequestedFile);
   RequestedFile := RequestedFile + '\Page1.html';
-  //RequestedFile := RequestedFile + '\new3.html';
   if not FileExists(RequestedFile) then begin
     Response.StatusCode:=404;
     exit;
