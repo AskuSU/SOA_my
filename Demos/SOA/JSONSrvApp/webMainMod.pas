@@ -79,7 +79,7 @@ var
   RequestedFile: string;
 begin
   Handled:=True;
-  RequestedFile := 'C:\data\testplate.html';
+  GetDir(0,RequestedFile);
   if not FileExists(RequestedFile) then begin
     Response.StatusCode:=404;
     exit;
