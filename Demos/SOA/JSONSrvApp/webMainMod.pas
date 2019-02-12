@@ -80,13 +80,15 @@ var
 begin
   Handled:=True;
   GetDir(0,RequestedFile);
+  RequestedFile := RequestedFile + '\Page1.html';
+  //RequestedFile := RequestedFile + '\new3.html';
   if not FileExists(RequestedFile) then begin
     Response.StatusCode:=404;
     exit;
   end;
   FS:= TFileStream.Create(RequestedFile,fmOpenRead);
 
-    Response.ContentType:='text/html';
+    Response.ContentType:='html';
     Response.ContentStream :=FS;
 end;
 
@@ -96,7 +98,7 @@ begin
   Response.Content :=
     '<html>' +
     '<head><title>Web Server Application</title></head>' +
-    '<body>Web Server Application</body>' +
+    '<body>Web Server Application Привет</body>' +
     '</html>';
 end;
 
